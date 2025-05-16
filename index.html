@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portafolio de Desarrollador</title>
+  <style>
+    /* Reset y base */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    body {
+      background: #121212;
+      color: #f0f0f0;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+    a {
+      color: #1db954;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    a:hover {
+      color: #1ed760;
+    }
+    header {
+      background: #1e1e1e;
+      padding: 20px 0;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: auto;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+    }
+    nav a {
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+    section {
+      padding: 60px 0;
+    }
+    h1, h2, h3 {
+      font-weight: 700;
+      margin-bottom: 15px;
+      color: #1db954;
+      text-align:center;
+    }
+    p {
+      max-width: 800px;
+      margin: 0 auto 30px auto;
+      text-align:center;
+      font-size: 1.1rem;
+      color: #ddd;
+    }
+    /* Hero */
+    #hero {
+      background: linear-gradient(135deg, #1db954, #14833b);
+      padding: 100px 10px;
+      color: white;
+    }
+    #hero h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+      letter-spacing: 2px;
+    }
+    #hero p {
+      font-size: 1.3rem;
+      font-weight: 500;
+    }
+    /* Sobre mi */
+    #about {
+      background: #181818;
+    }
+    /* Proyectos */
+    #projects .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .project-card {
+      background: #222;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+      transition: transform 0.3s ease;
+    }
+    .project-card:hover {
+      transform: translateY(-8px);
+    }
+    .project-image {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-bottom: 2px solid #1db954;
+    }
+    .project-content {
+      padding: 15px 20px;
+    }
+    .project-content h3 {
+      color: #1db954;
+      margin-bottom: 10px;
+    }
+    .project-content p {
+      color: #ccc;
+      font-size: 1rem;
+    }
+    .project-link {
+      margin-top: 15px;
+      display: inline-block;
+      font-weight: 600;
+      color: #1db954;
+      border: 2px solid #1db954;
+      padding: 7px 15px;
+      border-radius: 30px;
+      transition: background-color 0.3s ease;
+    }
+    .project-link:hover {
+      background-color: #1db954;
+      color: #121212;
+    }
+    /* Habilidades */
+    #skills {
+      background: #181818;
+      text-align: center;
+    }
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .skill-item {
+      background: #222;
+      border-radius: 50px;
+      padding: 12px 25px;
+      font-weight: 600;
+      color: #1db954;
+      font-size: 1.1rem;
+      box-shadow: 0 4px 15px rgba(29,185,84, 0.4);
+      transition: transform 0.3s ease;
+      cursor: default;
+    }
+    .skill-item:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 25px rgba(29,185,84, 0.7);
+    }
+    /* Contacto */
+    #contact {
+      background: #121212;
+      text-align: center;
+    }
+    #contact p {
+      margin-bottom: 20px;
+      font-size: 1.15rem;
+      color: #eee;
+    }
+    #contact a.contact-link {
+      color: #1db954;
+      font-weight: 600;
+      font-size: 1.2rem;
+      margin: 0 10px;
+      display: inline-block;
+      transition: color 0.3s ease;
+    }
+    #contact a.contact-link:hover {
+      color: #14833b;
+    }
+    footer {
+      text-align: center;
+      padding: 15px 0;
+      font-size: 0.9rem;
+      color: #555;
+      border-top: 1px solid #222;
+      margin-top: 40px;
+    }
+    @media(max-width: 600px) {
+      #hero h1 {
+        font-size: 2.2rem;
+      }
+      nav {
+        flex-direction: column;
+        gap: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="container">
+      <a href="#hero">Inicio</a>
+      <a href="#about">Sobre mí</a>
+      <a href="#projects">Proyectos</a>
+      <a href="#skills">Habilidades</a>
+      <a href="#contact">Contacto</a>
+    </nav>
+  </header>
+
+  <section id="hero">
+    <div class="container">
+      <h1>Tu Nombre</h1>
+      <p>Desarrollador Web | Frontend | Backend | Full Stack</p>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container">
+      <h2>Sobre mí</h2>
+      <p>
+        Soy un apasionado desarrollador con experiencia en crear aplicaciones web modernas, escalables y eficientes.
+        Me encanta aprender nuevas tecnologías y resolver problemas complejos.
+      </p>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Proyectos</h2>
+    <div class="projects-grid container">
+      <div class="project-card">
+        <img src="https://source.unsplash.com/400x200/?code,computer" alt="Proyecto 1" class="project-image" />
+        <div class="project-content">
+          <h3>Proyecto 1</h3>
+          <p>Una aplicación web para gestión de tareas con funcionalidades avanzadas y diseño intuitivo.</p>
+          <a href="#" class="project-link" target="_blank" rel="noopener noreferrer">Ver proyecto</a>
+        </div>
+      </div>
+      <div class="project-card">
+        <img src="https://source.unsplash.com/400x200/?app,technology" alt="Proyecto 2" class="project-image" />
+        <div class="project-content">
+          <h3>Proyecto 2</h3>
+          <p>Plataforma de comercio electrónico con carrito de compras y sistema de pagos integrado.</p>
+          <a href="#" class="project-link" target="_blank" rel="noopener noreferrer">Ver proyecto</a>
+        </div>
+      </div>
+      <div class="project-card">
+        <img src="https://source.unsplash.com/400x200/?website,design" alt="Proyecto 3" class="project-image" />
+        <div class="project-content">
+          <h3>Proyecto 3</h3>
+          <p>Landing page responsive para una startup tecnológica, optimizada para conversiones.</p>
+          <a href="#" class="project-link" target="_blank" rel="noopener noreferrer">Ver proyecto</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Habilidades</h2>
+    <div class="skills-list container" aria-label="Lista de habilidades">
+      <span class="skill-item">HTML5</span>
+      <span class="skill-item">CSS3</span>
+      <span class="skill-item">JavaScript</span>
+      <span class="skill-item">React</span>
+      <span class="skill-item">Node.js</span>
+      <span class="skill-item">Python</span>
+      <span class="skill-item">Git</span>
+      <span class="skill-item">SQL</span>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contacto</h2>
+    <p>¿Quieres ponerte en contacto? Escríbeme por correo o sígueme en mis redes sociales.</p>
+    <p>
+      <a href="mailto:tuemail@ejemplo.com" class="contact-link" aria-label="correo electrónico">tuemail@ejemplo.com</a>
+      |
+      <a href="https://github.com/tuusuario" target="_blank" rel="noopener noreferrer" class="contact-link" aria-label="GitHub">GitHub</a>
+      |
+      <a href="https://linkedin.com/in/tuusuario" target="_blank" rel="noopener noreferrer" class="contact-link" aria-label="LinkedIn">LinkedIn</a>
+    </p>
+  </section>
+
+  <footer>
+    &copy; 2024 Tu Nombre. Todos los derechos reservados.
+  </footer>
+
+</body>
+</html>
+
